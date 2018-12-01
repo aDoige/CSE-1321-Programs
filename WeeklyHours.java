@@ -59,6 +59,24 @@ public class WeeklyHours {
       return weeklyHours;
     
    } // END METHOD addHours
+   
+   public static int [] maxHours(int [][] array) {
+   
+      int [] maxHours = new int [2];
+      int max = array[0][0];
+      
+      for (int i = 0; i < array.length; i++) {
+         for (int j = 0; j < 7; j++) {
+            if (array[i][j] > max) {
+               max = array[i][j];
+               maxHours[0] = i; 
+               maxHours[1] = j;  
+            }  
+         }
+      }
+      
+      return maxHours;
+   }
 
    public static void main(String[] args) {
       
@@ -96,7 +114,7 @@ public class WeeklyHours {
          
          //System.out.println(Arrays.toString(days));
          //System.out.println(Arrays.toString(hours[i]));
-         
+         maxHours(hours);
          System.out.println("Employee" + (i+1) + " worked most hours on " + days[i]);
       }  
       
